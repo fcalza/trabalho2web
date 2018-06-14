@@ -1,9 +1,12 @@
-# npm install express --save
-
 # verificar se o node está instalado na maquina.
+# node --version
 
-# Abrir o prompet  e digitar " git clone https://github.com/vinicamel/trabalhoFinalWeb.git"
+# Se necessário, instalar o node:
+# curl -sL https://deb.nodesource.com/setup_8.x|sudo -E bash -
+# sudo apt-get install -y nodejs
 
-# cd trabalhoFinalWeb
+# Abrir o prompt  e digitar: git clone https://github.com/fcalza/trabalho2web.git
 
-# node app.js
+# cd trabalho2web
+# npm install express --save
+# node app.js &
