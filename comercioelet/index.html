@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Comércio Eletrônico</title>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+	<style>
+		body {
+			position: relative;
+		}
+		#textoMenu {font-size: 17px;}
+		#divisao{			background-color: #E8E8E8; font-weight: bold;	margin-top: 5px;	}
+		#divisao1{			background-color: #E8E8E8; font-weight: bold;	}
+		#section1 {padding-top:5px;height:644px;color: #fff}
+		#section2 {padding-top:50px;height:700px;}
+		#section3 {padding-top:50px;height:700px;}
+		#img-responsive-banner{ margin-left: 6px;}
+		h2{
+			   font-size: 100%;font-weight: bold; text-shadow: -1px 0 white, 0 1px white,
+      1px 0 white, 0 -1px white;
+		}
+		.container-fluid{
+			padding-left:0px;
+		}
+		#botoesRelatorios{margin-bottom: 15px; text-align: center;}
+		.margin-anuncio{
+			padding: 15px 15px 15px 15px; position: relative;
+		}
+		.margin-estatisticas{
+		  padding-left:150px;
+		  padding-right:150px;
+		}
+		.margin-relatorios{
+			padding-left:0px;
+		  padding-right:0px;
+		}
+
+		#chartContainer{
+			margin-top: 20px; margin-bottom: 50px;
+			height: 50%; width: 70%;  margin: auto;
+		}
+	</style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" style="margin-left: 5%" href="#">Aluguel de imóveis</a>
+			</div>
+			<div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav" id="textoMenu">
+						<li class="dropdown">
+										<a data-toggle="dropdown" class="dropdown-toggle" href="#"> Menu <b class="caret"></b></a>
+										<ul class="dropdown-menu" id="menudropdown">
+												<p  id="divisao1">Produtos</p>
+												<li><a href="http://35.198.42.142:3000/">Compra de Produtos</a></li>
+												<li><a href="http://sv.lucas.petroski.vms.ufsc.br:3000/">Avaliações e comentários sobre Produtos</a></li>
+												<li><a href="http://dev.saimon.silveira.vms.ufsc.br:3001/">Pesquisa de Produtos e Usuários</a></li>
+											<!--	<li class="divider"> </li><p  id="divisao">Cadastros</p> -->
+												<p  id="divisao">Cadastros</p>
+												<li><a href="http://150.162.244.102:3000/">Cadastrar Produto</a></li>
+												<li><a href="http://150.162.244.229:3000/">Cadastrar Usuário</a></li>
+												<p  id="divisao">Pagamentos</p>
+												<li><a href="http://web.thomas.feijoo.vms.ufsc.br:9000">Pagamento</a></li>
+												<p  id="divisao">Dashboard</p>
+												<li><a href="#section2">Relatórios</a></li>
+												<p  id="divisao">Suporte</p>
+												<li><a href="###############">Sugestões e suporte</a></li>
+										</ul>
+						</li>
+						<li><a href="#section2">Relatórios</a></li>
+						<li><a href="#section3">Estatisticas detalhadas</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+            <li><a href="">Login</a></li>
+          </ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+
+	<div id="section1" class="container-fluid">
+		<div>
+			<div style="color: #000; font: bold ;position: absolute;margin-top:10%; margin-left: 20%">
+				<h2>Encontre os produtos que você precisa!</h2>
+				<h2 style="margin-left: 35%">Os melhores preços estão aqui!</h2>
+			</div>
+
+			<div>
+				<a href="#section2" style="color: #FFFFFF;position: absolute;margin-top: 35%;margin-left: 42%" class="btn btn-primary">Confira os Relatórios de produtos</a>
+			</div>
+			<img src="https://www.e-commerce.org.br/wp-content/uploads/2016/08/Fotolia_98459283_Subscription_Monthly_M.jpg"
+			class="img-responsive" id="img-responsive-banner">
+		</div>
+	</div>
+	<div id="section2" class="container-fluid margin-relatorios">
+		<h1 style="text-align: center;">Relatórios</h1>
+		<div id="botoesRelatorios">
+	<!--		<button type="button" class="btn btn-default">Default</button>
+			<button type="button" class="btn btn-primary">Primary</button>
+			<button type="button" class="btn btn-success">Success</button>
+			<button type="button" class="btn btn-info">Info</button>
+			<button type="button" class="btn btn-warning">Warning</button>
+			<button type="button" class="btn btn-danger">Danger</button>
+			<button type="button" class="btn btn-link">Link</button>-->
+			<input id="botaoProdutosVendidos" class="btn btn-success" TYPE="BUTTON" NAME="submit" value="Produtos vendidos" onclick="produtosVendidos()" >
+      <input id="botaoVendasCanceladas" class="btn btn-warning" TYPE="BUTTON" NAME="submit" value="Vendas canceladas" onclick="vendasCanceladas()" >
+    	<input id="botaoDesistenciaVendas" class="btn btn-danger" TYPE="BUTTON" NAME="submit" value="Desistência de vendas" onclick="desistenciaVendas()" >
+
+		</div>
+		<script>
+		var countProdVendidos =0;
+		var countDesistenciaVendas=0;
+		var countVendasCanceladas=0;
+		function produtosVendidos () {
+
+			var chart = new CanvasJS.Chart("chartContainer", {
+				theme: "dark2", // "light2", "dark1", "dark2"
+				animationEnabled: true, // change to true
+				title:{
+					text: "Produtos vendidos"
+				},
+				data: [
+				{
+					// Change type to "bar", "area", "spline", "pie",etc.
+					type: "column",
+					dataPoints: [
+						{ label: "AR CONDICIONADO",  y: 110  },
+						{ label: "CELULAR", y: 215  },
+						{ label: "TELEVISÃO", y: 25  },
+						{ label: "COMPUTADOR",  y: 30  },
+						{ label: "GELADEIRA",  y: 28  }
+					]
+				}
+				]
+			});
+			chart.render();
+			if(countProdVendidos ==0){$("#chartContainer").slideDown();
+				countProdVendidos = 1;
+				countDesistenciaVendas = 0;
+				countVendasCanceladas = 0;
+			}
+			else{
+				$("#chartContainer").slideUp();
+				countProdVendidos = 0;
+			}
+		}
+		function vendasCanceladas() {
+
+			var chart = new CanvasJS.Chart("chartContainer", {
+				theme: "dark2", // "light2", "dark1", "dark2"
+				animationEnabled: true, // change to true
+				title:{
+					text: "Vendas canceladas"
+				},
+				data: [
+				{
+					// Change type to "bar", "area", "spline", "pie",etc.
+					type: "column",
+					dataPoints: [
+								{ label: "Março",  y: 30  },
+								{ label: "Abril",  y: 7  },
+								{ label: "Maio", y: 11  },
+								{ label: "Junho", y: 29  },
+								{ label: "Julho",  y: 28  }
+
+									]
+				}]
+			});
+			chart.render();
+			if(countVendasCanceladas ==0){$("#chartContainer").slideDown();
+				countVendasCanceladas = 1;
+				countDesistenciaVendas = 0;
+				countProdVendidos = 0;
+			}
+			else{
+				$("#chartContainer").slideUp();
+				countVendasCanceladas = 0;
+
+			}
+		}
+		function desistenciaVendas () {
+		  var chart = new CanvasJS.Chart("chartContainer", {
+		    theme: "dark2", // "light2", "dark1", "dark2"
+		    animationEnabled: true, // change to true
+		    title:{
+		      text: "Desistência de vendas"
+		    },
+		    data: [
+		    {
+		      // Change type to "bar", "area", "spline", "pie",etc.
+		      type: "area",
+		      color: "yellow",
+		      dataPoints: [
+		        { label: "Março",  y: 10  },
+		        { label: "Abril", y: 15  },
+		        { label: "Maio", y: 25  },
+		        { label: "Junho",  y: 30  },
+		        { label: "Julho",  y: 28  }
+		      ]
+		    }]
+		    });
+		  chart.render();
+			if(countDesistenciaVendas ==0){$("#chartContainer").slideDown();
+				countDesistenciaVendas = 1;
+				countVendasCanceladas = 0;
+				countProdVendidos = 0;
+			}
+			else{
+				$("#chartContainer").slideUp();
+				countDesistenciaVendas = 0;
+
+			}
+		}
+		</script>
+		<div id="chartContainer" ></div>
+	</div>
+	<div id="section3" class="container-fluid margin-estatisticas">
+		<h1 style="text-align: center;">Estatisticas detalhadas</h1>
+		<p>AAAAAAAAAAAAAAAAAA EEEEEEEEEEEEEEEE SSSSSSSSSSSSSSSSSSSSSSSSS DDDDDDDDDDDDDDDDDDDD CCCCCCCCCCCCCCCCCCCC </p>
+
+		<p>AAAAAAAAAAAAAAAAAA EEEEEEEEEEEEEEEE SSSSSSSSSSSSSSSSSSSSSSSSS DDDDDDDDDDDDDDDDDDDD CCCCCCCCCCCCCCCCCCCC </p>
+
+		<p>AAAAAAAAAAAAAAAAAA </p>
+
+		<p>AAAAAAAAAAAAAAAAAA WWWWWWWWWWWW </p>
+	</div>
+</body>
+</html>
